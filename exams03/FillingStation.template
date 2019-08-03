@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+need:
+
+1.attendance
+2.volume sold by particular attendant
+3.amount recieved by particular attendant
+4.time and date
+5.highest voulume
+6.highest sales
+7.current volume
+
+at any time T, find out the total volume sold by an attendant at anytime and their last sale by attendant.
+and the amount sold by an attendant and the maximum value and attendant with the highest volume of sales.
+know the last volume and current volume.
+
+classes:
+attendance = [name of attendant, time of operation, current volume at time of operation, current sales]
+
+filling station = [starting volume, currentSales, number of attendants]
+
+attendantLog [salesCount, amount per sale, time]
