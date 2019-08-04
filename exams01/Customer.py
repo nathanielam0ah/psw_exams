@@ -17,8 +17,8 @@ class Customer:
         email = str(input("EMAIL: "))
         twitterUsername = str(input("TWITTER USERNAME: "))
         carNo = str(input("CAR NO: "))
-        li2 = [customerName, phone_number, email, twitterUsername, carNo]
-        Customer.li = li2
+        li2 = {'NAME':customerName, 'PHONE NUMBER':phone_number, 'EMAIL':email, 'TWITTER USERNAME':twitterUsername, 'CAR NUMBER':carNo}
+        Customer.li.append(li2)
         print(Customer.li)
 
 newCustomer = Customer()
