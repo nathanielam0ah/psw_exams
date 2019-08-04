@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from datetime import date
+from datetime import date, datetime
 
 class Customer:
     li = {}
@@ -11,14 +11,15 @@ class Customer:
             email = str(input("EMAIL: "))
             twitterUsername = str(input("TWITTER USERNAME: "))
             carNo = str(input("CAR NO: "))
-            serviceTime = date.today()
+            serviceDate = date.today()
+            serviceTime = datetime.now().time()
         except ValueError:
             print("INVALID INPUT")
-        li2 = {'NAME':customerName, 'PHONE NUMBER':phone_number, 'EMAIL':email, 'TWITTER USERNAME':twitterUsername, 'CAR NUMBER':carNo, 'TIME':serviceTime}
+        li2 = {'NAME':customerName, 'PHONE NUMBER':phone_number, 'EMAIL':email, 'TWITTER USERNAME':twitterUsername, 'CAR NUMBER':carNo, 'DATE':serviceDate, 'TIME':serviceTime}
         Customer.li = li2
 
     def save_CustomerInfo(self):                #writes customer information to file
-        writer = open("HistoryLog.md", "w+")
+        writer = open("HistoryLog.md", "a+")
         writer.write(str(Customer.li))
         writer.close()
 
