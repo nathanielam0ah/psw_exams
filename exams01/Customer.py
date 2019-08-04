@@ -22,6 +22,7 @@ class Customer:
         writer.write(str(Customer.li))
         writer.close()
 
-newCustomer = Customer()
-newCustomer.get_CustomerInfo()
-newCustomer.save_CustomerInfo()
+if __name__ == "__main__":
+    newCustomer = Customer()
+    newCustomer.get_CustomerInfo()
+    newCustomer.save_CustomerInfo()
