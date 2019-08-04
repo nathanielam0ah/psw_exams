@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-
-#importing the customer module
-from ServiceLog import serviceLog
+from ServiceLog import serviceLog #importing the customer module
 
 class ManagementLog:
     allserviceLogs = {}
