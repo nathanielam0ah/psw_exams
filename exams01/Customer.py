@@ -18,7 +18,7 @@ class Customer:
         Customer.li = li2
 
     def save_CustomerInfo(self):                #writes customer information to file
-        writer = open("historyLog.md", "w+")
+        writer = open("HistoryLog.md", "w+")
         writer.write(str(Customer.li))
         writer.close()
 
