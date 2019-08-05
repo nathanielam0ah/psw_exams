@@ -5,7 +5,7 @@ import threading
 
 #importing local modules
 from Customer import Customer
-from Car import Wash
+from CarWash import Wash
 import SendEmail
 
 class Main:
