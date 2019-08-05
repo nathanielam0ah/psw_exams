@@ -1,7 +1,7 @@
 #!/usr/bin/env
 
 import smtplib, ssl
-import getpass
+#import getpass
 import config
 
 # this method creates an smtp server and sends an email using the given parameters
