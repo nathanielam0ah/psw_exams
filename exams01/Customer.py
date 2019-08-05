@@ -23,14 +23,5 @@ class Customer:
     def save_CustomerInfo(self):                #writes customer information to file
         writer = open("HistoryLog.md", "a+")
         writer.write(str(Customer.li))
+        writer.write("\n")
         writer.close()
-
-class Notification:
-    def send_Notification():
-        pass
-
-
-if __name__ == "__main__":
-    newCustomer = Customer()
-    newCustomer.get_CustomerInfo()
-    newCustomer.save_CustomerInfo()
