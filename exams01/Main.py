@@ -21,8 +21,8 @@ class Main:
             menuInput = int(input(": "))
         except ValueError:
             print("INVALID INPUT")
-        while 1:
-            if menuInput != 4 :
+        while menuInput != 4:
+            if menuInput == 1 :
                 testApp = Customer()
                 testApp.get_CustomerInfo()
                 testApp.save_CustomerInfo()
