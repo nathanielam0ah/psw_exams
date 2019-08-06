@@ -11,8 +11,7 @@ import SendEmail
 import config
 
 class Main:
-    def __init__(self,password):
-        self.password = config.management_pass
+    password = None
 
     def get_menu(self):
         print("CAR WASH APPLICATION")
@@ -31,17 +30,17 @@ class Main:
                 testApp.wash_car()
                 testApp.notify()
             elif menuInput == 3:
-                try:
-                    print("ENTER MANAGEMENT PASSWORD")
-                    password = getpass.getpass("PASSWORD: ")
-                    if password == self.password:
+                print("ENTER MANAGEMENT PASSWORD")
+                password = getpass.getpass("PASSWORD: ")
+                if password == config.management_pass:
+                    try:
                         testApp = ManagementLog()
                         testApp.readfile()
-                except:
-                    print("COULD NOT READ LOG FILE. YOU ARE NOT ADMIN")
+                    except:
+                        print("COULD NOT READ LOG FILE. NO LOG OR INCORRECT PASSWORD")
             elif menuInput == 4:
                 exit()
 
 if __name__ == "__main__":
-    MainObject = Main(None)
+    MainObject = Main()
     MainObject.get_menu()
