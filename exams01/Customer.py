@@ -5,14 +5,11 @@ class Customer:
     li = {}
 
     def get_CustomerInfo(self):             #recieves input of customer details.
-        try:
-            customerName = str(input("NAME: "))
-            phone_number = str(input("PHONE NO: "))
-            email = str(input("EMAIL: "))
-            twitterUsername = str(input("TWITTER USERNAME: "))
-            carNo = str(input("CAR NO: "))
-        except ValueError:
-            print("INVALID INPUT")
+        customerName = str(input("NAME: "))
+        phone_number = str(input("PHONE NO: "))
+        email = str(input("EMAIL: "))
+        twitterUsername = str(input("TWITTER USERNAME: "))
+        carNo = str(input("CAR NO: "))
         today = date.today()
         now = datetime.now()
         serviceDate = today.strftime("%d/%m/%Y")
