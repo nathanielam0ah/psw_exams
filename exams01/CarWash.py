@@ -2,6 +2,7 @@
 import time
 import config
 from SendEmail import send_email
+from Customer import Customer
 
 class Wash:
     def __init__(self, washingDone):
@@ -20,7 +21,7 @@ class Wash:
 
     def notify(self):
         if self.washingDone == True:
-            message = "Hello {name}, don/'t forget to pick up your car".format(name = "Customer")
+            message = "Hello {name}, don't forget to pick up your car".format(name = "Customer")
             send_email("CAR WASH", message, config.email_client)
         else:
             print("FACING ISSUES CHECK IN LATER")

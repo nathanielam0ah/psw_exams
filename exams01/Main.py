@@ -21,13 +21,13 @@ class Main:
         except ValueError:
             print("INVALID INPUT")
         if menuInput == 1 :
-            testApp = Customer()
-            testApp.get_CustomerInfo()
-            testApp.save_CustomerInfo()
+            testCustomer = Customer()
+            testCustomer.get_CustomerInfo()
+            testCustomer.save_CustomerInfo()
         elif menuInput == 2:
-            testApp = Wash(False)
-            testApp.wash_car()
-            testApp.notify()
+            testWash = Wash(False)
+            testWash.wash_car()
+            testWash.notify()
         elif menuInput == 3:
             print("ENTER MANAGEMENT PASSWORD")
             password = getpass.getpass("PASSWORD: ")
