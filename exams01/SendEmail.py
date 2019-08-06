@@ -15,6 +15,6 @@ def send_email(subject,message,mailto):
         text="Subject: {}\n\n{}".format(subject,message)
         server.sendmail(config.email_client,mailto,text)
         server.quit()
-        print(f"NOTIFICATION SENT TO {mailto}")
+        print(f"EMAIL NOTIFICATION SENT TO {mailto}")
     except:
         print("FAILED TO SEND.")
