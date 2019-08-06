@@ -15,7 +15,7 @@ class Main:
 
     def get_menu(self):
         print("CAR WASH APPLICATION")
-        print("ENTER 1 FOR CUSOMER INFORMATION, 2 FOR START CAR WASH, 3 FOR ADMINISTRATOR LOG 4 TO EXIT MENU TERMINAL")
+        print("ENTER 1 FOR CUSTOMER INFORMATION, 2 FOR START CAR WASH, 3 FOR ADMINISTRATOR LOG 4 TO EXIT MENU TERMINAL")
         try:
             menuInput = int(input(": "))
         except ValueError:
@@ -37,6 +37,8 @@ class Main:
                     testApp.readfile()
                 except:
                     print("COULD NOT READ LOG FILE. NO LOG OR INCORRECT PASSWORD")
+            else:
+                print("INCORRECT PASSWORD")
         elif menuInput == 4:
             exit()
 
