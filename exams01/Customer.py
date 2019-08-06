@@ -20,5 +20,4 @@ class Customer:
     def save_CustomerInfo(self):                #writes customer information to file
         writer = open("HistoryLog.md", "a+")
         writer.write(str(Customer.li))
-        writer.write("\n")
         writer.close()
