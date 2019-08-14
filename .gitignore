@@ -4,7 +4,10 @@ exams01/config.py
 exams01/.vscode
 exams01/template.py
 exams01/HistoryLog.md
+exams01/mysql_module00.py
+exams01/mysql_module01.py
 exams02/__pycache__
 exams03/__pycache__
 exams02/.vscode
 exams03/.vscode
+

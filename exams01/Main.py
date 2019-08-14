@@ -6,9 +6,9 @@ import getpass
 #importing local modules
 from Customer import Customer
 from Management import ManagementLog
+from SendEmail import send_email
 from CarWash import Wash
-import SendEmail
-import config
+from config import email_client, email_server, email_server_pass, management_pass
 
 class Main:
     password = None
@@ -27,11 +27,15 @@ class Main:
         elif menuInput == 2:
             testWash = Wash(False)
             testWash.wash_car()
-            testWash.notify()
+            if testWash.washingDone == True:
+                message = "Hello {name}, don't forget to pick up your car".format(name = "Customer")
+                send_email("CAR WASH", message, email_client)
+            else:
+                print("FACING ISSUES CHECK IN LATER")
         elif menuInput == 3:
             print("ENTER MANAGEMENT PASSWORD")
             password = getpass.getpass("PASSWORD: ")
-            if password == config.management_pass:
+            if password == management_pass:
                 try:
                     testApp = ManagementLog()
                     testApp.readfile()

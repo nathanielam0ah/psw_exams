@@ -14,14 +14,6 @@ class Wash:
             time.sleep(5)
             print("Done.")
             self.washingDone = True
-            return self.washingDone
         except:
             self.washingDone = False
-            return washingDone
-
-    def notify(self):
-        if self.washingDone == True:
-            message = "Hello {name}, don't forget to pick up your car".format(name = "Customer")
-            send_email("CAR WASH", message, config.email_client)
-        else:
-            print("FACING ISSUES CHECK IN LATER")
+        return self.washingDone
