@@ -9,6 +9,7 @@ from Management import ManagementLog
 from SendEmail import send_email
 from CarWash import Wash
 from config import email_client, email_server, email_server_pass, management_pass
+import SendSms
 
 class Main:
     password = None
@@ -22,8 +23,9 @@ class Main:
             print("INVALID INPUT")
         if menuInput == 1 :
             testCustomer = Customer()
-            testCustomer.get_CustomerInfo()
-            testCustomer.save_CustomerInfo()
+            testCustomer.get_customer_info()
+            testCustomer.create_customer_database()
+            testCustomer.save_customer_info()
         elif menuInput == 2:
             testWash = Wash(False)
             testWash.wash_car()
@@ -38,7 +40,7 @@ class Main:
             if password == management_pass:
                 try:
                     testApp = ManagementLog()
-                    testApp.readfile()
+                    testApp.read_from_database()
                 except:
                     print("COULD NOT READ LOG FILE. NO LOG OR INCORRECT PASSWORD")
             else:
