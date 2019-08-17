@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 
 import nexmo
+from config import nexmo_key, nexmo_key_secret
 
-client = nexmo.Client(key='e9f66586', secret='M0RJEF25MU6zGFqH')
+def send_sms():
+    client = nexmo.Client(key=nexmo_key, secret=nexmo_key_secret)
 
-client.send_message({
-    'from': 'THE CAR WASH',
-    'to': '233554351607',
-    'text': 'Hello Customer, we are done washing your car.',
-})
+    client.send_message({
+        'from': 'CAR WASH',
+        'to': testCustomer.phone_number,
+        'text': 'Hello Customer, we are done washing your car.',
+    })
