@@ -17,3 +17,7 @@ class Wash:
         except:
             self.washingDone = False
         return self.washingDone
+
+if __name__ == "__main__":
+    testWash = Wash(False)
+    testWash.wash_car()
