@@ -9,7 +9,6 @@ class ManagementLog:
         myresult = mycursor01.fetchall()
         for row in myresult:
             print(row)
-            print("\n")
 
 if __name__ == "__main__":
     testMan = ManagementLog()
