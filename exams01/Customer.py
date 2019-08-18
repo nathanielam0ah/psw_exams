@@ -8,7 +8,7 @@ class Customer:
     li = ()
 
     def get_customer_info(self):             #recieves input of customer details.
-        customerName = str(input("NAME: "))
+        Name = str(input("NAME: "))
         phone_number = str(input("PHONE NO: "))
         email = str(input("EMAIL: "))
         twitterUsername = str(input("TWITTER USERNAME: "))
@@ -16,9 +16,10 @@ class Customer:
         today = date.today()
         now = datetime.now()
         serviceDate = today.strftime("%d/%m/%Y")
-        serviceTime = now.strftime("%H:%M:%S")
-        li2 = (customerName, phone_number, email, twitterUsername, carNo, serviceDate, serviceTime)
+        serviceTime = now.strftime("%H:%M")
+        li2 = (Name, phone_number, email, twitterUsername, carNo, serviceDate, serviceTime)
         Customer.li = li2
+        return Customer.li
 
     def create_customer_database(self):              #creates a database for customers
         try:
