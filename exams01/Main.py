@@ -9,12 +9,11 @@ from Management import ManagementLog
 from SendEmail import send_email
 from CarWash import Wash
 from config import email_client, email_server, email_server_pass, management_pass
-import SendSms
 
-class Main:
+class Main:             #main menu class. that is obvious
     password = None
 
-    def get_menu(self):
+    def get_menu(self):             #where the attendant interacts with the application
         print("CAR WASH APPLICATION")
         print("ENTER 1 FOR CUSTOMER INFORMATION, 2 FOR START CAR WASH, 3 FOR ADMINISTRATOR LOG 4 TO EXIT MENU TERMINAL")
         try:
@@ -30,8 +29,11 @@ class Main:
             testWash = Wash(False)
             testWash.wash_car()
             if testWash.washingDone == True:
-                message = "Hello {name}, don't forget to pick up your car".format(name = "Customer")
-                send_email("CAR WASH", message, email_client)
+                try:
+                    message = "Hello {}, don't forget to pick up your car".format(Customer.li[0])
+                    send_email("CAR WASH", message, Customer.li[2])
+                except:
+                    print("COULD NOT SEND EMAIL NOTIFICATION")
             else:
                 print("FACING ISSUES CHECK IN LATER")
         elif menuInput == 3:
