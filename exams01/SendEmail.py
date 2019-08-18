@@ -14,5 +14,5 @@ def send_email(subject,message,mailto):             # this method creates an smt
         server.quit()
         print(f"EMAIL NOTIFICATION SENT TO {mailto}")
     except:
-        print("FAILED TO NOTIFICATION.")
+        print("COULD NOT SEND EMAIL.")
         input("press any key to continue: ")
