@@ -1,25 +1,42 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import time
-import datetime
-from Gas_Station import GasStation
+from datetime import date, datetime
+from mysql_module00 import mydb, mycursor
+from GasStation import Gas_Station
 
 class Attendance:
-    name = None
-    currentVolume = 0
-    start_time = None
-    attendance = []
+    li = ()
 
-    def get_attendance(self):
+    def get_attendant_information(self):
         name = str(input("NAME: "))
         currentVolume = float(input("CURRENT VOLUME: "))
-        start_time = datetime.datetime.now()
-        attendance_1 = {'Name': name, 'volume': currentVolume , 'start': start_time}
-        Attendance.attendance.append(attendance_1)
-        print(attendance)
-        
-def get_change_in_volume():
-    change_in_volume = GasStation.current_volume - Attendance.currentVolume
+        today = date.today()
+        now = datetime.now()
+        Date = today.strftime("%d/%m/%Y")
+        Time = now.strftime("%H:%M")
+        li2 = (name, currentVolume , Date, Time )
+        Attendance.li = li2
 
-attendanceObject = Attendance()
-attendanceObject.get_attendance()
+    def create_attendance_database(self):
+        try:
+            mycursor.execute("CREATE DATABASE deletemelater")
+        except:
+            None
+
+    def save_attendant_information(self):
+        try:
+            mycursor.execute("USE deletemelater")
+            mycursor.execute("CREATE TABLE attendant (name VARCHAR(255), volume VARCHAR(20), date VARCHAR(20), time VARCHAR(20) ")
+        except:
+            None
+        sqlFormula = "INSERT INTO attendant (name, volume, date, time) VALUES (%s, %s, %s, %s)"
+        attendance = Attendance.li
+        mycursor.execute(sqlFormula, attendance)
+        mydb.commit()
+
+
+if __name__ == "__main__":
+    testAttendance = Attendance()
+    testAttendance.get_attendant_information()
+    testAttendance.create_attendance_database()
+    testAttendance.save_attendant_information()

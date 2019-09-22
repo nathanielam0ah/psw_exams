@@ -1,4 +1,4 @@
-#Do not track these directories
+#Do not track these directories and files
 exams01/__pycache__
 exams01/config.py
 exams01/.vscode
@@ -7,7 +7,8 @@ exams01/HistoryLog.md
 exams01/auth.py
 exams01/testDB.py
 exams02/__pycache__
-exams03/__pycache__
 exams02/.vscode
 exams03/.vscode
-
+exams03/config.py
+exams03/__pycache__
+exams03/testDB.py

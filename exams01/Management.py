@@ -1,14 +1,13 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from mysql_module01 import mydb01, mycursor01
+from Database import manageDB
 
 class ManagementLog:
 
     def read_from_database(self):
-        mycursor01.execute("SELECT * FROM customer")
-        myresult = mycursor01.fetchall()
-        for row in myresult:
-            print(row)
+        readTable = manageDB()
+        item = str(input('Search Row Keyword: '))
+        readTable.readTB('Car_Wash', 'Customers', item)
 
 if __name__ == "__main__":
     testMan = ManagementLog()

@@ -1,15 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from datetime import date, datetime
 import getpass
-
-#importing local modules
+from datetime import date, datetime
+from CarWash import Wash
+from config import email_server, email_server_pass, management_pass
 from Customer import Customer
+from Logging import Logging
 from Management import ManagementLog
 from SendEmail import send_email
 from SendSms import send_sms
-from CarWash import Wash
-from config import email_server, email_server_pass, management_pass
+
 
 class Main:
     password = None
@@ -24,8 +24,8 @@ class Main:
         if menuInput == 1 :
             testCustomer = Customer()
             testCustomer.get_customer_info()
-            testCustomer.create_customer_database()
             testCustomer.save_customer_info()
+            input()
 
         elif menuInput == 2:
             testWash = Wash(False)
@@ -41,7 +41,8 @@ class Main:
                     send_sms(message,Customer.li[1])
                 except:
                     print("ERRORxCUSOTMER_NAMExSMS_EMPTY. ")
-            
+                input()
+
         elif menuInput == 3:
             print("ENTER MANAGEMENT PASSWORD")
             password = getpass.getpass("PASSWORD: ")
@@ -49,8 +50,9 @@ class Main:
                 try:
                     testApp = ManagementLog()
                     testApp.read_from_database()
+                    input()
                 except:
-                    print("COULD NOT READ LOG FILE. NO LOG OR INCORRECT PASSWORD")
+                    print("COULD NOT READ DATABASE. NO RESULT")
             else:
                 print("INCORRECT PASSWORD")
 
@@ -60,4 +62,7 @@ class Main:
 if __name__ == "__main__": # where the Main class is instantiated
     MainObject = Main()
     while 1:
-        MainObject.get_menu()
+        try:
+            MainObject.get_menu()
+        except Exception as error:
+            Logging(error.log, error)
