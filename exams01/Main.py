@@ -10,7 +10,6 @@ from Management import ManagementLog
 from SendEmail import send_email
 from SendSms import send_sms
 
-
 class Main:
     password = None
 

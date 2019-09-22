@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from datetime import date, datetime
-from Database import mydb, mycursor, manageDB
+from Database import manageDB, mycursor, mydb
 
 class Customer:
     list = []

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
+
 import time
 import config
-from SendEmail import send_email
 from Customer import Customer
+from SendEmail import send_email
 
 class Wash:
     def __init__(self, washingDone):

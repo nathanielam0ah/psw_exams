@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import smtplib, ssl
+import smtplib
+import ssl
 import config
 
 def send_email(subject,message,mailto):             # this method creates an smtp server and sends an email using the given parameters
